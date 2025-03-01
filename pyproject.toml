@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "certhook"
+version = "0.1.0"
+authors = [
+  { name = "Mat Martell", email = "github@aceserv.net" },
+]
+description = "A Python package for managing Let's Encrypt SSL certificates for various applications."
+readme = "README.md"
+requires-python = ">=3.6"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+]
+dependencies = []
+
+[project.scripts]
+certhook = "certhook.main:main"
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+]
+
+[tool.pytest.ini_options]
+addopts = "--no-cov"
+testpaths = ["tests"]
